@@ -43,17 +43,15 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // Your code goes here
-        Node myNode = first;
+        if (size == 0) return "()";
         String str = "(";
-        while (myNode!=null) 
-        {
-              
-                str += myNode.cp.toString() + " ";
-                myNode = myNode.next;
-
+        Node current = first;
+        while (current != null) {
+            str += current.toString() + " ";
+            current = current.next;
         }
-        return (str.substring(0, str.length()-1) + ")");
+        str = str.substring(0, str.length() - 1) + ")";
+        return str;
     }
 
     /** Returns the index of the first CharData object in this list
@@ -61,14 +59,14 @@ public class List {
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
         // Your code goes here
-        Node cur = first;
+        Node current = first;
         int count = 0;
 
-        while (cur != null)
+        while (current != null)
         {
-            if (cur.cp.equals(chr))
+            if (current.cp.equals(chr))
                 return count;
-            cur = cur.next;
+            current = current.next;
             count++;   
         }
 
