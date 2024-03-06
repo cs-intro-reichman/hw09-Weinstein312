@@ -23,7 +23,7 @@
             "request": "launch",
             "mainClass": "LanguageModel",
             "projectName": "hw09-Weinstein312_c35ad6ef",
-            "args": ["7", "Selection", "150", "random", "originofspecies.txt"]
+            "args": ["7", "Natural", "172", "fixed", "originofspecies.txt"]
         },
         {
             "type": "java",
