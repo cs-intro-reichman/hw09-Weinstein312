@@ -34,11 +34,11 @@ public class List {
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
         // Your code goes here
-        Node cur = new Node(new CharData(chr));
-        cur.next = first;
-        first = cur;
-        
-        size++;
+        CharData cd = new CharData(chr);
+        Node cur = new Node(cd);
+        cur.next = first;               
+        first = cur;        
+        this.size++;                       
     }
     
     /** GIVE Textual representation of this list. */
