@@ -35,28 +35,30 @@ public class LanguageModel {
 	public void train(String fileName) {
 
         String window = "";
-        char c = ' ';
+        char chr = ' ' ;
 
         In in = new In(fileName);
 
         for (int i = 0; i < windowLength; i++)
         {
-            c = in.readChar();
-            window += c;
+            chr = in.readChar();
+            window += chr;
         }
 
         while (!in.isEmpty())
         {
-            c = in.readChar();
-            if (CharDataMap.containsKey(window)) {
-                CharDataMap.get(window).update(c);
+            chr = in.readChar();
+            if (CharDataMap.containsKey(window))
+            {
+                CharDataMap.get(window).update(chr);
             }
-            else {
+            else
+            {
                 List probs = new List();
-                probs.addFirst(c);
+                probs.addFirst(chr);
                 CharDataMap.put(window, probs);
             }
-            window = window.substring(1) + c;
+            window = window.substring(1) + chr;
         }
 
         for (List probs : CharDataMap.values())
